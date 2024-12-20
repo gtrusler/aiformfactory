@@ -12,8 +12,13 @@ All notable changes to this project will be documented in this file.
   - Sign-in page with Google OAuth and Magic Link options
   - Auth state management with context
   - Auth test component for status display
+- Started Google OAuth integration
+  - Added UI components for OAuth flow
+  - Implemented callback handling
+  - Added ngrok setup for local OAuth testing
 
 ### Changed
+- Updated authentication flow to support OAuth providers
 
 ### Fixed
 - Fixed typo in PROJECT.md document storage management goal

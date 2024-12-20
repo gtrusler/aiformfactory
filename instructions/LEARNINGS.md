@@ -27,7 +27,8 @@
      2. Configure OAuth consent screen
      3. Create OAuth client credentials
      4. Add credentials to Supabase project
-     5. Test OAuth flow
+     5. Test OAuth flow with ngrok tunnel
+     6. Update redirect URLs in both Supabase and Google Cloud Console
 
 2. **Magic Link Authentication**
    - UI components ready
