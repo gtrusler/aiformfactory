@@ -12,8 +12,11 @@ AI Form Factory: An intelligent document automation system that combines AI-powe
 ## Tech Stack
 - **Frontend Framework**: Next.js (React-based)
 - **Language**: TypeScript/JavaScript
-- **Styling**: Tailwind CSS
-- **Authentication**: Supabase Auth
+- **Styling**: Tailwind CSS, DaisyUI
+- **Authentication**: 
+  - Supabase Auth
+  - OAuth Providers (Google - pending setup)
+  - Magic Link Authentication (pending email provider)
 - **Database**: Supabase
 - **UI Components**:
   - Headless UI for accessible components
@@ -25,10 +28,25 @@ AI Form Factory: An intelligent document automation system that combines AI-powe
   - TypeScript for type safety
   - Patch-package for dependency patching
 
+## Authentication System
+- **Protected Routes**: Middleware-based route protection
+- **Auth Methods**: 
+  - Google OAuth (pending provider setup)
+  - Magic Link Email (pending email provider)
+- **State Management**: React Context with Supabase Auth
+- **User Flow**:
+  1. Unauthenticated users redirected to /signin
+  2. Choice of authentication methods
+  3. Post-auth callback handling
+  4. Redirect to protected dashboard
+
 ## Project Structure
 ```
 aiformfactory/
 ├── app/                    # Next.js app directory
+│   ├── api/               # API routes including auth callbacks
+│   ├── dashboard/         # Protected dashboard routes
+│   └── signin/           # Authentication pages
 ├── components/            # Reusable React components
 ├── hooks/                # Custom React hooks
 ├── instructions/         # Project documentation
@@ -44,6 +62,7 @@ aiformfactory/
 - Project Repository: [Repository URL]
 - Documentation: [Documentation URL]
 - Issue Tracker: [Issue Tracker URL]
+- Supabase Dashboard: [Pending - Add Supabase project URL]
 
 ## Team
 - [Team members to be added]

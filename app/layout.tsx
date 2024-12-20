@@ -6,6 +6,7 @@ import "./globals.css";
 
 import "react-tooltip/dist/react-tooltip.css";
 import AppLayout from "@/components/app/AppLayout";
+import { AuthProvider } from '@/components/base/AuthProvider';
 
 export const viewport: Viewport = {
   // Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
@@ -18,6 +19,20 @@ export const viewport: Viewport = {
 // You can override them in each page passing params to getSOTags() function.
 export const metadata = getSEOTags();
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-  return <AppLayout>{children}</AppLayout>;
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <AuthProvider>
+          <AppLayout>
+            {children}
+          </AppLayout>
+        </AuthProvider>
+      </body>
+    </html>
+  );
 }

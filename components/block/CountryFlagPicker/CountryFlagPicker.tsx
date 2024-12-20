@@ -136,7 +136,7 @@ const CountryFlagPicker: FC<CountryFlagPickerProps> = ({
                     }}
                   >
                     {rowVirtualizer.getVirtualItems().map((virtualRow) => (
-                      <Fragment key={virtualRow.key}>
+                      <Fragment key={virtualRow.key.toString()}>
                         <button
                           style={{
                             position: "absolute",

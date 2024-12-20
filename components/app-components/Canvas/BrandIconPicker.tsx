@@ -84,13 +84,13 @@ const BrandIconPicker = ({
           }}
         >
           {rowVirtualizer.getVirtualItems().map((virtualRow) => (
-            <Fragment key={virtualRow.key}>
+            <Fragment key={virtualRow.key.toString()}>
               {columnVirtualizer.getVirtualItems().map(
                 (virtualColumn) =>
                   virtualRow.index * 7 + virtualColumn.index <
                     filteredIcons.length && (
                     <button
-                      key={virtualColumn.key}
+                      key={virtualColumn.key.toString()}
                       style={{
                         position: "absolute",
                         top: 0,

@@ -1,0 +1,56 @@
+### AI Form Factory `.cursorrules` Instructions
+
+You are an expert in building intelligent systems for dynamic form generation, document processing, and adaptive AI-guided interactions.
+
+---
+
+#### **Form Generation**
+- **Custom Layouts**: Support complex layouts with nested sections, conditional visibility, and dynamic reordering. Use JSON or structured configurations for form metadata.
+- **Multilingual Support**: Enable localization for all forms and interfaces. Use i18next for managing translations and dynamic field content in multiple languages.
+- **Conditional Logic**: Implement rules for showing/hiding fields and sections based on user responses. Allow for multi-step forms and progress indicators.
+
+---
+
+#### **AI-Powered Features**
+- **Primary Responsibilities**:
+  - **Field Suggestions**: Use AI models to suggest relevant fields based on initial user inputs and context.
+  - **Form Analysis**: Enable analysis of uploaded forms to auto-generate fields and infer relationships.
+  - **Dynamic Interactions**: Provide adaptive question suggestions and auto-complete based on user behavior and previous answers.
+- **Integration**: Leverage APIs from OpenAI and Anthropic for language understanding and response generation. Allow for modularity to easily integrate other NLP APIs.
+
+---
+
+#### **Document Generation**
+- **Supported Formats**: Enable automated export to PDF, Word, and Markdown.
+- **Styling Guidelines**: Use pre-configured templates for styling, with customizable headers, footers, and watermarks.
+- **Content Mapping**: Map form responses to specific sections or placeholders in the generated documents.
+
+---
+
+#### **Security**
+- **Data Protection**: Implement AES encryption for stored data and TLS for data in transit. Use OWASP guidelines for securing APIs.
+- **Compliance**: Ensure the system adheres to GDPR principles for data storage and user consent.
+- **User Authentication**: Use Supabase Auth for secure, scalable authentication.
+
+---
+
+#### **Processing and Storage**
+- **Asynchronous Processing**: Perform data analysis and document generation asynchronously to enhance responsiveness.
+- **Cloud Storage**: Store data and generated documents securely using AWS SDK integrations. Enable easy retrieval for multi-session completions.
+
+---
+
+#### **Guided Interviews**
+- **User Guidance**:
+  - Use RAG-based AI chat to lead users through questions interactively.
+  - Allow deviation but gently guide users back to relevant subtopics or unanswered questions.
+- **Personalization**: Adapt responses and suggestions based on user context, past interactions, and dynamic behavior during the session.
+- **Session Management**: Support multi-session completion with persistent state saving and retrieval for partially completed forms.
+- **Subtopic Navigation**: Allow users to navigate between subtopics non-linearly but maintain a clear progress indicator.
+
+---
+
+#### **Development Practices**
+- **Modular Design**: Implement a component-based architecture using Next.js. Use reusable components for form fields, navigation, and document outputs.
+- **Performance Optimization**: Use lazy loading for forms and conditional components. Optimize Core Web Vitals for better user experience.
+- **Accessibility**: Follow WCAG 2.1 AA guidelines. Use semantic HTML with ARIA roles for screen reader compatibility.

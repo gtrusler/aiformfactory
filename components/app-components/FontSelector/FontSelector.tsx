@@ -111,7 +111,7 @@ const FontSelector = ({
         >
           {rowVirtualizer.getVirtualItems().map((virtualRow) => (
             <button
-              key={virtualRow.key}
+              key={virtualRow.key.toString()}
               style={{
                 transform: `translateY(${virtualRow.index * 32}px)`,
               }}

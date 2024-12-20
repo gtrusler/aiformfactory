@@ -1,4 +1,5 @@
 import { ButtonAccount } from "@/components/landing-components";
+import AuthTest from "@/components/app/AuthTest";
 
 export const dynamic = "force-dynamic";
 
@@ -11,6 +12,7 @@ export default async function Dashboard() {
       <section className="max-w-xl mx-auto space-y-8">
         <ButtonAccount />
         <h1 className="text-3xl font-extrabold md:text-4xl">Private Page</h1>
+        <AuthTest />
       </section>
     </main>
   );

@@ -1,6 +1,6 @@
-import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
-import { NextResponse } from "next/server";
-
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 // since middleware runs on all requests, we dont want to run it on static assets
 // also disable on prefetches https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy#adding-a-nonce-with-middleware
@@ -12,7 +12,7 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
-     * - assets/* (files next automatically serves in public/assets), seems to be the main culprit
+     * - assets/* (files next automatically serves in public/assets)
      * - robots.txt (SEO)
      * - sitemap.xml (SEO)
      */
@@ -24,13 +24,19 @@ export const config = {
       ],
     },
   ],
-}
+};
 
-
-// The middleware is used to refresh the user's session before loading Server Component routes
-export async function middleware(req) {
+export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
   const supabase = createMiddlewareClient({ req, res });
-  await supabase.auth.getSession();
+
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (!session && req.nextUrl.pathname.startsWith('/dashboard')) {
+    return NextResponse.redirect(new URL('/signin', req.url));
+  }
+
   return res;
 }
