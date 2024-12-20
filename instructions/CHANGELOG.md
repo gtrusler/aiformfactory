@@ -10,5 +10,6 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 ### Fixed
+- Fixed typo in PROJECT.md document storage management goal
 
 ### Security
