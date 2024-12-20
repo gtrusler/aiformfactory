@@ -4,6 +4,20 @@
 
 This project follows a structured documentation system. All documentation is stored in the `/instructions` directory.
 
+### ⚠️ Important Prerequisites
+Before starting any work:
+```bash
+# 1. Activate conda environment
+conda activate aiformfactory-env  # or your project-specific environment
+
+# If you need to create the environment:
+conda create -n aiformfactory-env python=3.11
+conda activate aiformfactory-env
+
+# 2. Install dependencies
+npm install  # or yarn install
+```
+
 ### First Time Setup
 
 1. **Check Documentation**

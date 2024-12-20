@@ -4,6 +4,16 @@ This directory contains the project's living documentation. Each file serves a s
 
 ## Initial Setup
 
+### Prerequisites
+```bash
+# 1. Ensure conda is activated with the correct environment
+conda activate aiformfactory-env  # or your project-specific environment name
+
+# If environment doesn't exist:
+conda create -n aiformfactory-env python=3.11
+conda activate aiformfactory-env
+```
+
 ### New Project Checklist
 1. Create the `/instructions` directory if it doesn't exist
 2. Initialize each documentation file:
